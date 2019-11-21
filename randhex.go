@@ -7,12 +7,12 @@ import (
 	"strings"
 )
 
-// RandHex is a container for a random hexidecimal color code
+// RandHex is a container for a random hexadecimal color code
 type RandHex struct {
 	bytes []byte
 }
 
-// New generates a new random hexidecimal color code
+// New generates a new random hexadecimal color code
 func New() RandHex {
 	bytes := make([]byte, 3)
 	rand.Read(bytes)
@@ -20,12 +20,12 @@ func New() RandHex {
 	return RandHex{bytes: bytes}
 }
 
-// String provides the hexidecimal color code in string format
+// String provides the hexadecimal color code in string format
 func (randhex RandHex) String() string {
 	return strings.ToUpper("#" + hex.EncodeToString(randhex.bytes))
 }
 
-// Bytes provides the bytes of the hexidecimal color code
+// Bytes provides the bytes of the hexadecimal color code
 func (randhex RandHex) Bytes() []byte {
 	val := make([]byte, 3)
 	copy(val, randhex.bytes)
@@ -42,11 +42,10 @@ func ParseString(str string) (randhex RandHex, err error) {
 	}
 
 	if len(noHash) != 6 {
-		return RandHex{}, errors.New(str + " is not a valid hexidecimal color code. Hexidecimal color codes must be 3 or 6 digits.")
+		return RandHex{}, errors.New(str + " is not a valid hexadecimal color code. Hexadecimal color codes must be 3 or 6 digits.")
 	}
 
-	bytes := make([]byte, 3)
-	bytes, err = hex.DecodeString(noHash)
+	bytes, err := hex.DecodeString(noHash)
 
 	if err != nil {
 		return RandHex{}, err

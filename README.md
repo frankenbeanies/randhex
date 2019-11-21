@@ -1,6 +1,11 @@
 # randhex
 
-A library for generating random hexidecimal color codes
+[![Build Status](https://travis-ci.org/frankenbeanies/randhex.svg?branch=master)](https://travis-ci.org/frankenbeanies/randhex) 
+[![Coverage Status](https://coveralls.io/repos/github/frankenbeanies/randhex/badge.svg?branch=master)](https://coveralls.io/github/frankenbeanies/randhex?branch=master) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/frankenbeanies/randhex)](https://goreportcard.com/report/github.com/frankenbeanies/randhex)
+[![GoDoc](https://godoc.org/github.com/frankenbeanies/uuid4?status.svg)](https://godoc.org/github.com/frankenbeanies/randhex)
+
+A library for generating random hexadecimal color codes
 
 ## License
 
@@ -22,7 +27,7 @@ import "github.com/frankenbeanies/randhex
 
 ### New()
 
-Generates a new random hexidecimal color code (RandHex)
+Generates a new random hexadecimal color code (RandHex)
 
 ```go
 hex := randhex.New()
